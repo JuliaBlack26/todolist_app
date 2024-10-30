@@ -32,7 +32,7 @@ class _SignInScreenState extends State<SignInScreen> {
           actions: [
             TextButton(
                 onPressed: () => Navigator.pop(context, 'Cancel'),
-                child: Text('OK')),
+                child: const Text('OK')),
           ],
         );
       },
@@ -82,13 +82,17 @@ class _SignInScreenState extends State<SignInScreen> {
                     controller: emailController,
                     obscureText: false,
                     labelText: 'Email',
-                    hintText: 'Enter your email', validator: (value) {  },),
+                    hintText: 'Enter your email', validator: (value) {
+                      return null;
+                      },),
                 const SizedBox(height: 20),
                 MyTextFormField(
                     controller: passwordController,
                     obscureText: true,
                     labelText: 'Password',
-                    hintText: 'Enter your password', validator: (value) {  },),
+                    hintText: 'Enter your password', validator: (value) {
+                      return null;
+                      },),
                 const SizedBox(height: 25),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
